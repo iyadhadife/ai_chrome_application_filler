@@ -2,13 +2,26 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <link rel="stylesheet" href="popup.css" />
+  <title>AI Form Filler</title>
+  <style>
+    body { width: 350px; font-family: system-ui, sans-serif; background: #0f172a; color: #f8fafc; padding: 15px; margin: 0; }
+    h2 { font-size: 16px; margin-top: 0; border-bottom: 1px solid #334155; padding-bottom: 10px; }
+    .btn { background: #3b82f6; color: white; border: none; padding: 10px; width: 100%; border-radius: 6px; cursor: pointer; margin-bottom: 10px; font-weight: bold; }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .btn-success { background: #10b981; }
+    #status-message { font-size: 12px; margin-bottom: 15px; color: #93c5fd; }
+    .field-card { background: #1e293b; padding: 10px; border-radius: 6px; margin-bottom: 10px; border: 1px solid #334155; }
+    .field-label { font-size: 12px; font-weight: bold; margin-bottom: 6px; display: block; }
+    input, textarea { width: 100%; box-sizing: border-box; background: #0f172a; border: 1px solid #334155; color: white; padding: 6px; border-radius: 4px; font-size: 12px; }
+    .btn-small { margin-top: 6px; padding: 6px; font-size: 11px; margin-bottom: 0; }
+  </style>
 </head>
 <body>
   <h2>AI Form Filler</h2>
-  <button id="btn-scan">Scanner la page</button>
-  <button id="btn-fill-all">Tout remplir</button>
-  <div id="status-message"></div>
+  <button id="btn-scan" class="btn">1. Scanner la page</button>
+  <button id="btn-fill-all" class="btn btn-success" disabled>2. Tout remplir</button>
+  <div id="status-message">Prêt. Ouvrez une page avec un formulaire.</div>
+  <div id="fields-list"></div>
   <script src="popup.js"></script>
 </body>
 </html>
